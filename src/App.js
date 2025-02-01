@@ -7,6 +7,7 @@ import CounterReducer from './components/CounterReducer';
 import { useReducer, useState } from 'react';
 import CounterWithEffects from './components/CounterWithEffects';
 import Timer from './components/Timer';
+import UseRef from './components/UseRef';
 
 
 export default function App() {
@@ -66,6 +67,10 @@ export default function App() {
       <hr/>
 
       <Timer />
+
+      <hr/>
+
+      <UseRef />
     </>
   );
 }
