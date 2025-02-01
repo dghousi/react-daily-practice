@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { forwardRef, useRef } from "react";
 
 function UseRef()
 {
@@ -9,11 +9,17 @@ function UseRef()
     
     return (
         <>
-            <input ref={inputRef}/>
+            <Input ref={inputRef}/>
             <button onClick={handleFocus}>Focus</button>
         </>
     )
 }
 
+
+const Input = forwardRef(
+    function (props, ref) {
+        return <input ref={ref} {...props} style={{color: 'red'}}/>
+    }
+)
 
 export default UseRef;
