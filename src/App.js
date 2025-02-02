@@ -4,27 +4,27 @@ import MyButton from './components/Button';
 import Counter from './components/Counter';
 import CounterReducer from './components/CounterReducer';
 
-import { useReducer, useState } from 'react';
+import { useReducer, useRef, useState } from 'react';
 import CounterWithEffects from './components/CounterWithEffects';
 import Timer from './components/Timer';
 import UseRef from './components/UseRef';
 
+import ImperativeCounter  from './components/ImperativeHandleHook/ImperativeCounter';
+import CustomInput from './components/ImperativeHandleHook/CustomInput';
 
 export default function App() {
-
   const [count, setCount] = useState(0)
-
   const [state, dispatch] = useReducer(reducer, {
     stateCount: 0
-  })
-
+  });
   const [isShown, setIsShown] = useState(true);
+  const imperativeCounterRef = useRef();
+  const customInputRef = useRef();
+
   return (
     <>
       <Hello name="Jane" />
-      <Hello name="Doe" />
       <hr/>
-
       <Comment username="khan" time={new Date().toString()}>
         <h3>HI, </h3>
         <p>this is comment</p>
@@ -71,6 +71,20 @@ export default function App() {
       <hr/>
 
       <UseRef />
+
+      <hr/>
+
+      <ImperativeCounter ref={imperativeCounterRef} />
+
+      <CustomInput ref={customInputRef} />
+
+      <br/>
+      <button onClick={()=> {
+        imperativeCounterRef.current.reset();
+        customInputRef.current.reset();
+      }}>Reset</button>  
+
+      <hr/>
     </>
   );
 }
