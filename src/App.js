@@ -4,13 +4,15 @@ import MyButton from './components/Button';
 import Counter from './components/Counter';
 import CounterReducer from './components/CounterReducer';
 
-import { useReducer, useRef, useState } from 'react';
+import { useContext, useReducer, useRef, useState } from 'react';
 import CounterWithEffects from './components/CounterWithEffects';
 import Timer from './components/Timer';
 import UseRef from './components/UseRef';
 
 import ImperativeCounter  from './components/ImperativeHandleHook/ImperativeCounter';
 import CustomInput from './components/ImperativeHandleHook/CustomInput';
+import Profile from './components/ContextImplementation/Profile';
+import { UserContext, UserContextProvider } from './components/ContextImplementation/UserContext';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +22,7 @@ export default function App() {
   const [isShown, setIsShown] = useState(true);
   const imperativeCounterRef = useRef();
   const customInputRef = useRef();
-
+  
   return (
     <>
       <Hello name="Jane" />
@@ -85,6 +87,12 @@ export default function App() {
       }}>Reset</button>  
 
       <hr/>
+
+      <main>
+        <UserContextProvider>
+          <AppInternal />
+        </UserContextProvider>
+      </main>
     </>
   );
 }
@@ -108,3 +116,13 @@ function handleClick(e)
   console.log(e.target)
 }
 
+function AppInternal() 
+{
+  const { toggleUser } = useContext(UserContext);
+  return (
+    <>
+      <Profile />
+      <button onClick={toggleUser}>Toggle User</button>
+    </>
+  );
+}
