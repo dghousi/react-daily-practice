@@ -13,6 +13,7 @@ import ImperativeCounter  from './components/ImperativeHandleHook/ImperativeCoun
 import CustomInput from './components/ImperativeHandleHook/CustomInput';
 import Profile from './components/ContextImplementation/Profile';
 import { UserContext, UserContextProvider } from './components/ContextImplementation/UserContext';
+import ListItems from './components/List/ListItems';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -93,6 +94,12 @@ export default function App() {
           <AppInternal />
         </UserContextProvider>
       </main>
+
+      <hr/>
+
+      <p>List Items</p>
+
+      <ListItems />
     </>
   );
 }
