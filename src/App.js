@@ -14,6 +14,7 @@ import CustomInput from './components/ImperativeHandleHook/CustomInput';
 import Profile from './components/ContextImplementation/Profile';
 import { UserContext, UserContextProvider } from './components/ContextImplementation/UserContext';
 import ListItems from './components/List/ListItems';
+import MemoApp from './components/Memoization/MemoApp';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -100,6 +101,10 @@ export default function App() {
       <p>List Items</p>
 
       <ListItems />
+
+      <hr/>
+
+      <MemoApp />
     </>
   );
 }
