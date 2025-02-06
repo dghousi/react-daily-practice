@@ -15,6 +15,7 @@ import Profile from './components/ContextImplementation/Profile';
 import { UserContext, UserContextProvider } from './components/ContextImplementation/UserContext';
 import ListItems from './components/List/ListItems';
 import MemoApp from './components/Memoization/MemoApp';
+import EffectApp from './components/Effects/EffectApp';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -97,14 +98,12 @@ export default function App() {
       </main>
 
       <hr/>
-
       <p>List Items</p>
-
       <ListItems />
-
       <hr/>
-
       <MemoApp />
+      <hr/>
+      <EffectApp />
     </>
   );
 }
