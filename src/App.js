@@ -18,6 +18,7 @@ import MemoApp from './components/Memoization/MemoApp';
 import EffectApp from './components/Effects/EffectApp';
 import ModalToggleApp from './components/ModalToggle/ModalToggleApp';
 import ErrorHandlingApp from './components/ErrorHandling/ErrorHandlingApp';
+import DebuggingApp from './components/Debugging/DebuggingApp';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -110,6 +111,8 @@ export default function App() {
       <ModalToggleApp />
       <hr/>
       <ErrorHandlingApp />
+      <hr/>
+      <DebuggingApp />
     </>
   );
 }
