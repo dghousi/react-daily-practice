@@ -17,6 +17,7 @@ import ListItems from './components/List/ListItems';
 import MemoApp from './components/Memoization/MemoApp';
 import EffectApp from './components/Effects/EffectApp';
 import ModalToggleApp from './components/ModalToggle/ModalToggleApp';
+import ErrorHandlingApp from './components/ErrorHandling/ErrorHandlingApp';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -107,6 +108,8 @@ export default function App() {
       <EffectApp />
       <hr/>
       <ModalToggleApp />
+      <hr/>
+      <ErrorHandlingApp />
     </>
   );
 }
