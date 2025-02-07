@@ -16,6 +16,7 @@ import { UserContext, UserContextProvider } from './components/ContextImplementa
 import ListItems from './components/List/ListItems';
 import MemoApp from './components/Memoization/MemoApp';
 import EffectApp from './components/Effects/EffectApp';
+import ModalToggleApp from './components/ModalToggle/ModalToggleApp';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -104,6 +105,8 @@ export default function App() {
       <MemoApp />
       <hr/>
       <EffectApp />
+      <hr/>
+      <ModalToggleApp />
     </>
   );
 }
